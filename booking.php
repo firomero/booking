@@ -325,4 +325,18 @@ function array_shuffle(array $array){
 }
 
 
+/**
+ * Inserts a value in a array
+ * @param $array
+ * @param $value
+ * @param $index
+ * @return array
+ */
+function array_insert($array, $value, $index)
+{
+    $copy = $array;
+    return $copy = array_merge(array_splice($copy, max(0, $index - 1)), array($value), $copy);
+}
+
+
 
